@@ -7,8 +7,10 @@ deploy:
 build:
   local:
     push: false
+  googleCloudBuild:
+    projectId: ticketing-dev-289418
   artifacts:
-    - image: mwinel/auth
+    - image: us.gcr.io/ticketing-dev-289418/auth
       context: auth
       docker:
         dockerfile: Dockerfile
