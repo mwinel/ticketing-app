@@ -9,7 +9,6 @@ import { signUpRouter } from "./routes/signup";
 import { signInRouter } from "./routes/signin";
 import { signOutRouter } from "./routes/signout";
 import { errorHandler } from "./middlewares/error-handler";
-import { validateRequest } from "./middlewares/validate-request";
 import { NotFoundError } from "./errors/not-found-error";
 
 const app = express();
@@ -32,7 +31,6 @@ app.all("*", async (res, req) => {
 });
 
 app.use(errorHandler);
-// app.use(validateRequest);
 
 // Connect to a MongoDB instance.
 // Listen to port 3000.
