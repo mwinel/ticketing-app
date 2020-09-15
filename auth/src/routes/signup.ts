@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { body } from "express-validator";
+import { body, validationResult } from "express-validator";
 
 const router = express.Router();
 
@@ -13,7 +13,17 @@ router.post(
       .withMessage("Enter a strong password."),
   ],
   (req: Request, res: Response) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.status(400).send(errors.array());
+    }
+
     const { email, password } = req.body;
+
+    console.log("creating a user....");
+
+    res.send({});
   }
 );
 
