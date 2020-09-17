@@ -1,7 +1,7 @@
 import request from "supertest";
 import { app } from "../../app";
 
-it("returns a 200 on successful signin.", async () => {
+it("returns a 200 and sets a cookie on successful signin.", async () => {
   await request(app)
     .post("/api/users/signup")
     .send({
