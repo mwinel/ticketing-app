@@ -1,5 +1,5 @@
 function BananasPage() {
-  return <div>Here is the Bananas Page!</div>;
+  return <h1>Here is the Bananas Page!</h1>;
 }
 
 export default BananasPage;
