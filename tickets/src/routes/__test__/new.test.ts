@@ -1,10 +1,26 @@
 import request from "supertest";
 import { app } from "../../app";
+import { Ticket } from "../../models/ticket";
 
 it("returns a 201 on successful ticket creation with valid inputs.", async () => {
-  const response = await request(app).post("/api/tickets").send({});
+  let tickets = await Ticket.find({});
+  expect(tickets.length).toEqual(0);
 
-  expect(response.status).not.toEqual(404);
+  const title = "test title";
+
+  await request(app)
+    .post("/api/tickets")
+    .set("Cookie", global.signin())
+    .send({
+      title,
+      price: 35,
+    })
+    .expect(201);
+
+  tickets = await Ticket.find({});
+  expect(tickets.length).toEqual(1);
+  expect(tickets[0].title).toEqual(title);
+  expect(tickets[0].price).toEqual(35);
 });
 
 it("returns a 401 status code if user is not signed in.", async () => {
