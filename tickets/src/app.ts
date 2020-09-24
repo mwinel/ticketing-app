@@ -9,6 +9,7 @@ import {
 } from "@mwineltickets/common";
 
 import { createTicketRouter } from "./routes/new";
+import { retrieveTicketRouter } from "./routes/retrieve-ticket";
 
 const app = express();
 app.set("trust proxy", true);
@@ -22,6 +23,7 @@ app.use(
 app.use(currentUser);
 
 app.use(createTicketRouter);
+app.use(retrieveTicketRouter);
 
 app.all("*", async (res, req) => {
   throw new NotFoundError();
