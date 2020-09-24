@@ -13,6 +13,7 @@ A simple but scalable ticketing app built based on the **Microservices Architect
 - [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
 - [Skaffold](https://skaffold.dev/)
 - [MongoDB](https://www.mongodb.com/)
+- [NATS streaming server](https://docs.nats.io/nats-streaming-concepts/intro)
 
 ## Setting up your dev enviroment
 
