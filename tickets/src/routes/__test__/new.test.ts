@@ -9,7 +9,7 @@ it("returns a 201 on successful ticket creation with valid inputs.", async () =>
   const title = "test title";
 
   await request(app)
-    .post("/api/tickets")
+    .post("/api/v1/tickets")
     .set("Cookie", global.signin())
     .send({
       title,
@@ -25,7 +25,7 @@ it("returns a 201 on successful ticket creation with valid inputs.", async () =>
 
 it("returns a 401 status code if user is not signed in.", async () => {
   const response = await request(app)
-    .post("/api/tickets")
+    .post("/api/v1/tickets")
     .set("Cookie", global.signin())
     .send({});
 
@@ -34,7 +34,7 @@ it("returns a 401 status code if user is not signed in.", async () => {
 
 it("returns an error if an invalid title is provided.", async () => {
   await request(app)
-    .post("/api/tickets")
+    .post("/api/v1/tickets")
     .set("Cookie", global.signin())
     .send({
       title: "",
@@ -45,7 +45,7 @@ it("returns an error if an invalid title is provided.", async () => {
 
 it("returns an error if an invalid price is provided.", async () => {
   await request(app)
-    .post("/api/tickets")
+    .post("/api/v1/tickets")
     .set("Cookie", global.signin())
     .send({
       title: "test title",
@@ -54,7 +54,7 @@ it("returns an error if an invalid price is provided.", async () => {
     .expect(400);
 
   await request(app)
-    .post("/api/tickets")
+    .post("/api/v1/tickets")
     .set("Cookie", global.signin())
     .send({
       title: "test title",

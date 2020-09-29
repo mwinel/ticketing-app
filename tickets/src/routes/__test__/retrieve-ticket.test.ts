@@ -13,7 +13,7 @@ it("returns a 200 if a ticket is found.", async () => {
   const price = 15;
 
   const response = await request(app)
-    .post("/api/tickets")
+    .post("/api/v1/tickets")
     .set("Cookie", global.signin())
     .send({
       title,
@@ -22,7 +22,7 @@ it("returns a 200 if a ticket is found.", async () => {
     .expect(201);
 
   const ticketResponse = await request(app)
-    .get(`/api/tickets/${response.body.id}`)
+    .get(`/api/v1/tickets/${response.body.id}`)
     .send()
     .expect(200);
 
