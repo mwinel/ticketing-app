@@ -22,27 +22,37 @@ export default () => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <h1>Sign Up</h1>
-      <div className="form-group">
-        <label>Email Address</label>
+    <div className="d-flex align-items-center">
+      <form className="form-group" onSubmit={onSubmit}>
+        <h1 className="h3 mb-3 font-weight-normal">Sign Up</h1>
+        <label htmlFor="inputEmail" className="sr-only">
+          Email address
+        </label>
         <input
+          type="email"
+          id="inputEmail"
+          className="form-control"
+          placeholder="Email address"
+          autoFocus
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="form-control"
         />
-      </div>
-      <div className="form-group">
-        <label>Password</label>
+        <label htmlFor="inputPassword" className="sr-only">
+          Password
+        </label>
         <input
+          type="password"
+          id="inputPassword"
+          className="form-control"
+          placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          type="password"
-          className="form-control"
         />
-      </div>
-      {errors}
-      <button className="btn btn-primary">Sign Up</button>
-    </form>
+        {errors}
+        <button className="btn btn-lg btn-primary btn-block mt-3">
+          Sign Up
+        </button>
+      </form>
+    </div>
   );
 };

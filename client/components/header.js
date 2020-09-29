@@ -18,13 +18,15 @@ export default ({ currentUser }) => {
     });
 
   return (
-    <nav className="navbar navbar-light bg-light">
-      <Link href="/">
-        <a className="navbar-brand">GitTix</a>
-      </Link>
+    <nav className="navbar navbar-light bg-light mb-3">
+      <div className="container">
+        <Link href="/">
+          <a className="navbar-brand font-weight-bold">TicketingApp</a>
+        </Link>
 
-      <div className="d-flex justify-content-end">
-        <ul className="nav d-flex align-items-center">{links}</ul>
+        <div className="d-flex justify-content-end">
+          <ul className="nav d-flex align-items-center font-weight-bold">{links}</ul>
+        </div>
       </div>
     </nav>
   );
