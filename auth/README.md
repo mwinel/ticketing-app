@@ -1,6 +1,8 @@
 # Auth
 
-This is the **ticketing-app** authentication microservice. When a user successfully signs up or signs in using their credentials, a ***JSON Web Token*** is returned.
+This is the **ticketing-app** authentication microservice. A user can create their account, sign in with their credentials, get current user state and signout.
+
+When a user successfully signs up or signs in using their credentials, a ***JSON Web Token*** is returned.
 
 For a user to be able to access a protected route or resource, the client should send a JWT within the authorization headers.
 
