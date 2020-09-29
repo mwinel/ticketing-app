@@ -9,7 +9,7 @@ import { Password } from "../services/password";
 const router = express.Router();
 
 router.post(
-  "/api/users/signin",
+  "/api/v1/users/signin",
   [
     body("email").isEmail().withMessage("Enter a valid email."),
     body("password")

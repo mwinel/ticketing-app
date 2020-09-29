@@ -3,7 +3,7 @@ import { app } from "../../app";
 
 it("returns a 200 and sets a cookie on successful signin.", async () => {
   await request(app)
-    .post("/api/users/signup")
+    .post("/api/v1/users/signup")
     .send({
       email: "test@test.com",
       password: "password",
@@ -11,7 +11,7 @@ it("returns a 200 and sets a cookie on successful signin.", async () => {
     .expect(201);
 
   const response = await request(app)
-    .post("/api/users/signin")
+    .post("/api/v1/users/signin")
     .send({
       email: "test@test.com",
       password: "password",
@@ -23,7 +23,7 @@ it("returns a 200 and sets a cookie on successful signin.", async () => {
 
 it("returns a 400 on signin with an invalid email.", async () => {
   await request(app)
-    .post("/api/users/signup")
+    .post("/api/v1/users/signup")
     .send({
       email: "test@test.com",
       password: "password",
@@ -31,7 +31,7 @@ it("returns a 400 on signin with an invalid email.", async () => {
     .expect(201);
 
   return request(app)
-    .post("/api/users/signin")
+    .post("/api/v1/users/signin")
     .send({
       email: "testtest",
       password: "password",
@@ -41,7 +41,7 @@ it("returns a 400 on signin with an invalid email.", async () => {
 
 it("returns a 400 on signin with an invalid password.", async () => {
   await request(app)
-    .post("/api/users/signup")
+    .post("/api/v1/users/signup")
     .send({
       email: "test@test.com",
       password: "password",
@@ -49,7 +49,7 @@ it("returns a 400 on signin with an invalid password.", async () => {
     .expect(201);
 
   return request(app)
-    .post("/api/users/signin")
+    .post("/api/v1/users/signin")
     .send({
       email: "test@test.com",
       password: "pa",
@@ -59,14 +59,14 @@ it("returns a 400 on signin with an invalid password.", async () => {
 
 it("returns a 400 on signin with missing email or password.", async () => {
   await request(app)
-    .post("/api/users/signin")
+    .post("/api/v1/users/signin")
     .send({
       email: "test@test.com",
     })
     .expect(400);
 
   await request(app)
-    .post("/api/users/signin")
+    .post("/api/v1/users/signin")
     .send({
       password: "password",
     })
