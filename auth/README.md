@@ -85,7 +85,6 @@ X-Powered-By: Express
 ETag: W/"39-2Tau8nSgX7abwBWX0foX08CouSc"
 Set-Cookie: express:sess=eyJqd3QiOiJleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKcFpDSTZJalZtTnpKbE5qY3dPRFl4WVdVMk1EQXhPRE14T1dVMU1pSXNJbVZ0WVdsc0lqb2lkR1Z6ZEVCMFpYTjBMbU52YlNJc0ltbGhkQ0k2TVRZd01UTTROVFk0TTMwLm10eThuNzBicWpaV2wxWnZ6RlJiaVQ2X0lhOGZYR3B3NGtDTU9CLW1qMkUifQ==; path=/; secure; httponly
 Strict-Transport-Security: max-age=15724800; includeSubDomains"
-
 ```
 
 **Response**
@@ -114,7 +113,6 @@ Host: ticketing.dev
 Accept-Encoding: gzip, deflate, br
 Connection: keep-alive
 Cookie: express:sess=eyJqd3QiOiJleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKcFpDSTZJalZtTnpKbE5qY3dPRFl4WVdVMk1EQXhPRE14T1dVMU1pSXNJbVZ0WVdsc0lqb2lkR1Z6ZEVCMFpYTjBMbU52YlNJc0ltbGhkQ0k2TVRZd01UTTROVFk0TTMwLm10eThuNzBicWpaV2wxWnZ6RlJiaVQ2X0lhOGZYR3B3NGtDTU9CLW1qMkUifQ=="
-
 ```
 
 **Response Headers**
@@ -140,5 +138,4 @@ Strict-Transport-Security: max-age=15724800; includeSubDomains"
         "iat": 1601385683
     }
 }
-
 ```
