@@ -11,13 +11,13 @@ For a user to be able to access a protected route or resource, the client should
 - [Docker](https://www.docker.com/)
 - [MongoDB](https://www.mongodb.com/)
 
-## Installation
+## Installation & Running the API
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Follow the guidelines in this [README.md](https://github.com/mwinel/ticketing-app/blob/master/README.md) for enviroment set up and running your app.
 
 ## REST API
 
-The REST API to the auth servce is described below.
+The REST API to the auth service is described below. You can test these endpoints using [postman](https://www.postman.com/downloads/).
 
 ### User Sign Up
 
@@ -73,20 +73,6 @@ Strict-Transport-Security: max-age=15724800; includeSubDomains"
 }
 ```
 
-**Response Headers**
-
-```
-Server: nginx/1.19.2
-Date: Tue, 29 Sep 2020 13:21:23 GMT
-Content-Type: application/json; charset=utf-8
-Content-Length: 57
-Connection: keep-alive
-X-Powered-By: Express
-ETag: W/"39-2Tau8nSgX7abwBWX0foX08CouSc"
-Set-Cookie: express:sess=eyJqd3QiOiJleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKcFpDSTZJalZtTnpKbE5qY3dPRFl4WVdVMk1EQXhPRE14T1dVMU1pSXNJbVZ0WVdsc0lqb2lkR1Z6ZEVCMFpYTjBMbU52YlNJc0ltbGhkQ0k2TVRZd01UTTROVFk0TTMwLm10eThuNzBicWpaV2wxWnZ6RlJiaVQ2X0lhOGZYR3B3NGtDTU9CLW1qMkUifQ==; path=/; secure; httponly
-Strict-Transport-Security: max-age=15724800; includeSubDomains"
-```
-
 **Response**
 
 ```
@@ -115,19 +101,6 @@ Connection: keep-alive
 Cookie: express:sess=eyJqd3QiOiJleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKcFpDSTZJalZtTnpKbE5qY3dPRFl4WVdVMk1EQXhPRE14T1dVMU1pSXNJbVZ0WVdsc0lqb2lkR1Z6ZEVCMFpYTjBMbU52YlNJc0ltbGhkQ0k2TVRZd01UTTROVFk0TTMwLm10eThuNzBicWpaV2wxWnZ6RlJiaVQ2X0lhOGZYR3B3NGtDTU9CLW1qMkUifQ=="
 ```
 
-**Response Headers**
-
-```
-Server: nginx/1.19.2
-Date: Tue, 29 Sep 2020 13:27:57 GMT
-Content-Type: application/json; charset=utf-8
-Content-Length: 90
-Connection: keep-alive
-X-Powered-By: Express
-ETag: W/"5a-sAY2KEcwJ2VsLMEENRcuccTH+d0"
-Strict-Transport-Security: max-age=15724800; includeSubDomains"
-```
-
 **Response Body**
 
 ```
@@ -138,4 +111,16 @@ Strict-Transport-Security: max-age=15724800; includeSubDomains"
         "iat": 1601385683
     }
 }
+```
+
+### User Sign Out
+
+**Request**
+
+`POST api/v1/users/signout`
+
+**Response body**
+
+```
+{}
 ```
